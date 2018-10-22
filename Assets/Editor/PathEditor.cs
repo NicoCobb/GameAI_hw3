@@ -21,6 +21,7 @@ public class PathEditor : Editor {
             path.UpdatePoints();
         }
     }
+
     private void OnSceneGUI()
     {
         PathScript path = (PathScript)target;

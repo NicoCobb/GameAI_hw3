@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 406e501fd8d70a8428ed9506f8437400, type: 3}
+  m_Name: PathFollower
+  m_EditorClassIdentifier: 
+  useMaxSpeed: 1
+  faceTarget: 0
+  points:
+  - {x: 13.37611, y: 3.054861, z: 0}
+  - {x: 3.0304818, y: 4.7762976, z: 0}
+  - {x: -9.593369, y: -3.0543146, z: 0}
+  - {x: -9.748855, y: -13.327204, z: 0}
+  - {x: 9.698581, y: -6.0385666, z: 0}
+  - {x: 14.513424, y: -12.748786, z: 0}
+  - {x: 16.33546, y: -6.1741457, z: 0}
+  - {x: 17.515808, y: -2.3787658, z: 0}
+  - {x: 22.630655, y: -2.3380098, z: 0}
+  - {x: 24.79463, y: -0.07567263, z: 0}
+  - {x: 46.893845, y: 0.38472652, z: 0}
+  - {x: 59.122437, y: 1.4049113, z: 0}
+  - {x: 60.90298, y: 14.267602, z: 0}
+  - {x: 48.9696, y: 29.251614, z: 0}
+  - {x: 23.042774, y: -7.1673284, z: 0}
+  predictionTime: 0.0001
