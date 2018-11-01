@@ -954,6 +954,7 @@ GameObject:
   - component: {fileID: 795139099}
   - component: {fileID: 795139101}
   - component: {fileID: 795139102}
+  - component: {fileID: 795139103}
   m_Layer: 0
   m_Name: Boid
   m_TagString: Untagged
@@ -1037,6 +1038,7 @@ MonoBehaviour:
   targetTransform: {fileID: 0}
   brain: {fileID: 11400000, guid: 7268c07b370c5f44ab70e2a2e957e95b, type: 2}
   pathProgress: 0
+  pathTargetIndex: 0
   circleSprite: {fileID: 795139099}
   pointerSprite: {fileID: 1373236912}
 --- !u!50 &795139102
@@ -1051,7 +1053,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 4
+  m_LinearDrag: 2
   m_AngularDrag: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -1059,6 +1061,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &795139103
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 795139098}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &940256793
 GameObject:
   m_ObjectHideFlags: 0
@@ -1612,12 +1629,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points:
-  - {x: 5.456127, y: 2.1044679, z: 0}
+  - {x: 7.016548, y: 3.0223615, z: 0}
   - {x: 3.0304818, y: 4.7762976, z: 0}
-  - {x: -9.593369, y: -3.0543146, z: 0}
-  - {x: -9.748855, y: -13.327204, z: 0}
-  - {x: 5.2633886, y: -7.7281623, z: 0}
-  - {x: 14.513424, y: -12.748786, z: 0}
+  - {x: -9.856738, y: -5.2490616, z: 0}
+  - {x: -17.143291, y: -7.882756, z: 0}
+  - {x: -17.242416, y: -16.200674, z: 0}
+  - {x: -13.02625, y: -14.795287, z: 0}
+  - {x: 5.263388, y: -7.615476, z: 0}
+  - {x: 4.587276, y: -13.362419, z: 0}
+  - {x: 25.162169, y: -11.734618, z: 0}
   - {x: 16.33546, y: -6.1741457, z: 0}
   - {x: 18.466202, y: -4.279555, z: 0}
   - {x: 21.469057, y: -1.3876128, z: 0}
@@ -1625,7 +1645,7 @@ MonoBehaviour:
   - {x: 30.631481, y: -0.35447407, z: 0}
   - {x: 37.91787, y: -0.14327765, z: 0}
   - {x: 46.471462, y: -1.1992784, z: 0}
-  - {x: 52.27945, y: -1.4104781, z: 0}
+  - {x: 54.25144, y: -1.5231645, z: 0}
   - {x: 58.911243, y: -1.9742839, z: 0}
   - {x: 60.90298, y: 14.267602, z: 0}
   - {x: 48.9696, y: 29.251614, z: 0}
@@ -1668,12 +1688,15 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 5.456127, y: 2.1044679, z: 0}
+  - {x: 7.016548, y: 3.0223615, z: 0}
   - {x: 3.0304818, y: 4.7762976, z: 0}
-  - {x: -9.593369, y: -3.0543146, z: 0}
-  - {x: -9.748855, y: -13.327204, z: 0}
-  - {x: 5.2633886, y: -7.7281623, z: 0}
-  - {x: 14.513424, y: -12.748786, z: 0}
+  - {x: -9.856738, y: -5.2490616, z: 0}
+  - {x: -17.143291, y: -7.882756, z: 0}
+  - {x: -17.242416, y: -16.200674, z: 0}
+  - {x: -13.02625, y: -14.795287, z: 0}
+  - {x: 5.263388, y: -7.615476, z: 0}
+  - {x: 4.587276, y: -13.362419, z: 0}
+  - {x: 25.162169, y: -11.734618, z: 0}
   - {x: 16.33546, y: -6.1741457, z: 0}
   - {x: 18.466202, y: -4.279555, z: 0}
   - {x: 21.469057, y: -1.3876128, z: 0}
@@ -1681,7 +1704,7 @@ LineRenderer:
   - {x: 30.631481, y: -0.35447407, z: 0}
   - {x: 37.91787, y: -0.14327765, z: 0}
   - {x: 46.471462, y: -1.1992784, z: 0}
-  - {x: 52.27945, y: -1.4104781, z: 0}
+  - {x: 54.25144, y: -1.5231645, z: 0}
   - {x: 58.911243, y: -1.9742839, z: 0}
   - {x: 60.90298, y: 14.267602, z: 0}
   - {x: 48.9696, y: 29.251614, z: 0}

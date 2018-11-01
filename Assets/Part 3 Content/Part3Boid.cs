@@ -23,7 +23,7 @@ public class Part3Boid : MonoBehaviour
     private Quaternion startingRot;
 
     public float pathProgress = 0; // start from the 0 section of the path, then move forwards from there
-
+    public int pathTargetIndex = 0;
 
     [Space]
     [SerializeField]
@@ -50,6 +50,8 @@ public class Part3Boid : MonoBehaviour
             transform.position = startingPos;
             rb.velocity = Vector2.zero;
             rb.angularVelocity = 0;
+            pathProgress = 0;
+            pathTargetIndex = 0;
         }
         if (brain != null)
         {
